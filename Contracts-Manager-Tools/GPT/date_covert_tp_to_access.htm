@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Format Converter</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Date Format Converter</h1>
+        
+        <div class="form-group">
+            <label for="fileInput">Select a text file:</label>
+            <input type="file" id="fileInput" accept=".csv" class="form-control-file">
+        </div>
+        
+        <button id="convertButton" class="btn btn-primary">Convert Dates and Headers</button>
+        
+        <div class="form-group mt-3">
+            <label for="outputText">Preview:</label>
+            <textarea id="outputText" class="form-control" rows="10" placeholder="Converted text will appear here"></textarea>
+        </div>
+        
+        <button id="downloadButton" class="btn btn-success">Download</button>
+    </div>
+
+    <script>
+        let fileContent = '';
+
+        $(document).ready(function() {
+            $('#fileInput').on('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        fileContent = e.target.result;
+                    }
+                    reader.readAsText(file);
+                }
+            });
+
+            $('#convertButton').on('click', function() {
+                // Date conversion pattern
+                const datePattern = /\b(\d{2})\/(\d{2})\/(\d{2})\b/g;
+                
+                // Phrase conversion patterns
+                const phrasePatterns = {
+                    "Letter Code": "LetterCode",
+                    "Letter file": "LetterFile",
+                    "Attached files": "AttachedFiles"
+                };
+
+                // Convert dates
+                let convertedText = fileContent.replace(datePattern, function(match, day, month, year) {
+                    const fullYear = parseInt(year) < 50 ? '20' + year : '19' + year;
+                    return `${fullYear}-${month}-${day}`;
+                });
+
+                // Convert phrases
+                for (const [original, replacement] of Object.entries(phrasePatterns)) {
+                    const phrasePattern = new RegExp(original, 'g');
+                    convertedText = convertedText.replace(phrasePattern, replacement);
+                }
+
+                $('#outputText').val(convertedText);
+            });
+
+$('#downloadButton').on('click', function() {
+    const convertedText = $('#outputText').val();
+    const blob = new Blob([convertedText], { type: 'text/plain' });
+
+    const currentDateTime = new Date();
+    const formattedDateTime = currentDateTime.getFullYear() +
+                              ('0' + (currentDateTime.getMonth() + 1)).slice(-2) +
+                              ('0' + currentDateTime.getDate()).slice(-2) +
+                              ('0' + currentDateTime.getHours()).slice(-2) +
+                              ('0' + currentDateTime.getMinutes()).slice(-2);
+
+    const fileName = `converted_table_${formattedDateTime}.csv`;
+
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = fileName;
+    link.click();
+});
+});
+    </script>
+</body>
+</html>

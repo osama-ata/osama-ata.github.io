@@ -31,7 +31,7 @@ $(document).ready(function(){
 		const textbox1 = $('#textbox_1').val();
 		const textbox2 = $('#textbox_2').val();
 
-		const prompt = `You are a construction contracts manager working for the Contractor. I want you to draft a letter to the Subcontractor. Use this feedback in your draft:\n'''${textbox1}'''. \n\n These are also additional considerations in your righting style:\n${textbox2} \n\n Always, use THIRD-PERSON NARRATION (e.g., the Contractor, the Engineer, the Subcontractor and the Employer) \n\n The style and tone should be professional like a lawyer, and it must be very clear, easy and concise`;
+		const prompt = `You are a construction contracts manager working for the Contractor. I want you to draft a letter to the Subcontractor. Use this feedback in your draft:\n'''${textbox1}'''. \n\n These are also additional considerations in your writing style :\n${textbox2} \n\n Always, use THIRD-PERSON NARRATION (e.g., the Contractor, the Engineer, the Subcontractor and the Employer) \n\n The style and tone should be professional like a lawyer, and it must be very clear, easy and concise`;
 	
 		$('#textbox_3').val(prompt);
 	});

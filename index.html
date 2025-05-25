@@ -2,17 +2,8 @@
 <html lang="en">
 
 <head>
-
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-K3HP94LW');</script>
-  <!-- End Google Tag Manager -->
+  <!-- Loading Components -->
+  <script src="js/components.js"></script>
 
 
   <meta charset="utf-8" />
@@ -32,8 +23,8 @@
   <meta property="og:title" content="Contracts Management Services | Osama Ata" />
   <meta property="og:description"
     content="Expert contracts management, claims management, and dispute resolution services in Egypt and KSA." />
-  <meta property="og:image" content="https://osamata.com/apple-touch-icon.png" />
-  <meta property="og:url" content="https://osamata.com/" />
+  <meta property="og:image" content="https://osama-ata.github.io/assets/icons/apple-touch-icon.png" />
+  <meta property="og:url" content="https://osama-ata.github.io/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter Card Meta Tags -->
@@ -41,7 +32,7 @@
   <meta name="twitter:title" content="Contracts Management Services | Osama Ata" />
   <meta name="twitter:description"
     content="Expert contracts management, claims management, and dispute resolution services in Egypt and KSA." />
-  <meta name="twitter:image" content="https://osamata.com/apple-touch-icon.png" />
+  <meta name="twitter:image" content="https://osama-ata.github.io/assets/icons/apple-touch-icon.png" />
 
 
   <!-- Structured Data Markup -->
@@ -51,9 +42,9 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Osama Ata - Contracts Manager",
-    "url": "https://osamata.com/",
-    "logo": "https://osamata.com/apple-touch-icon.png",
-    "image": "https://osamata.com/apple-touch-icon.png",
+    "url": "https://osama-ata.github.io/",
+    "logo": "https://osama-ata.github.io/assets/icons/apple-touch-icon.png",
+    "image": "https://osama-ata.github.io/assets/icons/apple-touch-icon.png",
     "description": "Professional contracts management, claims management, and dispute resolution services in Egypt and Saudi Arabia (KSA).",
     "address": {
       "@type": "PostalAddress",
@@ -75,62 +66,24 @@
   <!-- Google fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
-
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
   <!-- Favicons-->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
 </head>
 
 <body id="page-top">
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3HP94LW" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="Osama Ata's Logo" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars ms-1"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#clients">Employers</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="/Contracts-Manager-Tools">Contracts Manager Tools</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Masthead-->
-  <header class="masthead">
-    <div class="container">
-      <div class="masthead-subheading" style="text-shadow: 0px 0px 5px black">
-        Welcome to osamata.com
-      </div>
-      <div class="masthead-heading text-uppercase" style="text-shadow: 0px 0px 5px black">
-        Construction and Contracts Management Services
-      </div>
-      <a class="btn btn-primary btn-xl text-uppercase" href="#services">Our Services</a>
-    </div>
+  <my-navbar></my-navbar>
 
 
-
-
-  </header>
   <!-- Services-->
   <section class="page-section" id="services">
     <div class="container">
@@ -188,62 +141,13 @@
 
   </section>
 
-  <!-- portfolio Grid-->
-  <section class="page-section bg-light" id="portfolio">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">Projects</h2>
-        <h3 class="section-subheading text-muted">
-          Osama manages/managed a portfolio of contracts in Tabuk region,
-          Saudi Arabia, for some of the most ambitious and visionary projects
-          in the world, such as NEOM and the Red Sea Project.
-        </h3>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- Clients-->
-  <div class="py-5" id="clients">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">Employers</h2>
-        <h3 class="section-subheading text-muted">
-          Osama was employed by various engineering and construction contractors and consultants for projects in Egypt
-          and Saudi Arabia.
-        </h3>
-      </div>
-      <div class="row align-items-center">
-        <div class="col-md-3 col-sm-6 my-3">
-          <a href="https://solidegypt.com/"><img class="img-fluid img-brand d-block mx-auto"
-              src="assets/img/logos/solid-logo.svg" alt="..." aria-label="Solid Construction" /></a>
-        </div>
-        <div class="col-md-3 col-sm-6 my-3">
-          <a href="https://ace-mb.com/"><img class="img-fluid img-brand d-block mx-auto"
-              src="assets/img/logos/ACE_Logo.svg" alt="..." aria-label="ACE Moharram Bakhoum" /></a>
-        </div>
-        <div class="col-md-3 col-sm-6 my-3">
-          <a href="https://pcp-eg.net/"><img class="img-fluid img-brand d-block mx-auto"
-              src="assets/img/logos/PCP-logo.svg" alt="..." aria-label="PCP" /></a>
-        </div>
-        <div class="col-md-3 col-sm-6 my-3">
-          <a href="https://www.hassanallam.com/"><img class="img-fluid img-brand d-block mx-auto"
-              src="assets/img/logos/HAC-Logo_Hz.svg" alt="..." aria-label="HAC" /></a>
-        </div>
-        <div class="col-md-3 col-sm-6 my-3">
-          <a href="https://www.archirodon.net/"><img class="img-fluid img-brand d-block mx-auto"
-              src="assets/img/logos/ARCO-logo.svg" alt="..." aria-label="Archirodon" /></a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Footer-->
   <footer class="footer py-4">
     <div class="container" id="contact">
       <div class="row align-items-center">
         <div class="col-lg-4 text-lg-start">
-          Copyright &copy; osamata.com 2024
+          Copyright &copy; osama-ata.github.io 2024
         </div>
         <div class="col-lg-4 my-3 my-lg-0">
           <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/osamata/" aria-label="Twitter"><i
@@ -263,14 +167,10 @@
 
 
   <!-- Bootstrap core JS-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Core theme JS-->
-  <script src="js/scripts.js"></script>
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-  <!-- * *                               SB Forms JS                               * *-->
-  <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+
 </body>
 
 </html>
